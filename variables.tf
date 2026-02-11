@@ -108,18 +108,18 @@ EOT
     kubernetes_cluster_id         = string
     name                          = string
     os_disk_size_gb               = optional(number)
-    os_disk_type                  = optional(string, "Managed")
+    os_disk_type                  = optional(string) # Default: "Managed"
     os_sku                        = optional(string)
-    os_type                       = optional(string, "Linux")
+    os_type                       = optional(string) # Default: "Linux"
     pod_subnet_id                 = optional(string)
-    priority                      = optional(string, "Regular")
+    priority                      = optional(string) # Default: "Regular"
     proximity_placement_group_id  = optional(string)
-    scale_down_mode               = optional(string, "Delete")
+    scale_down_mode               = optional(string) # Default: "Delete"
     snapshot_id                   = optional(string)
-    spot_max_price                = optional(number, -1)
+    spot_max_price                = optional(number) # Default: -1
     tags                          = optional(map(string))
     temporary_name_for_rotation   = optional(string)
-    ultra_ssd_enabled             = optional(bool, false)
+    ultra_ssd_enabled             = optional(bool) # Default: false
     vm_size                       = optional(string)
     vnet_subnet_id                = optional(string)
     orchestrator_version          = optional(string)
@@ -138,7 +138,7 @@ EOT
     max_count                     = optional(number)
     max_pods                      = optional(number)
     min_count                     = optional(number)
-    mode                          = optional(string, "User")
+    mode                          = optional(string) # Default: "User"
     node_count                    = optional(number)
     node_labels                   = optional(map(string))
     workload_runtime              = optional(string)
@@ -147,7 +147,7 @@ EOT
       allowed_unsafe_sysctls    = optional(set(string))
       container_log_max_line    = optional(number)
       container_log_max_size_mb = optional(number)
-      cpu_cfs_quota_enabled     = optional(bool, true)
+      cpu_cfs_quota_enabled     = optional(bool) # Default: true
       cpu_cfs_quota_period      = optional(string)
       cpu_manager_policy        = optional(string)
       image_gc_high_threshold   = optional(number)
@@ -209,7 +209,7 @@ EOT
       undrainable_node_behavior     = optional(string)
     }))
     windows_profile = optional(object({
-      outbound_nat_enabled = optional(bool, true)
+      outbound_nat_enabled = optional(bool) # Default: true
     }))
   }))
 }
