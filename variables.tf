@@ -43,6 +43,7 @@ Optional:
     - zones
     - kubelet_config (block):
         - allowed_unsafe_sysctls (optional)
+        - container_log_max_files (optional)
         - container_log_max_line (optional)
         - container_log_max_size_mb (optional)
         - cpu_cfs_quota_enabled (optional)
@@ -145,6 +146,7 @@ EOT
     zones                         = optional(set(string))
     kubelet_config = optional(object({
       allowed_unsafe_sysctls    = optional(set(string))
+      container_log_max_files   = optional(number)
       container_log_max_line    = optional(number)
       container_log_max_size_mb = optional(number)
       cpu_cfs_quota_enabled     = optional(bool) # Default: true
