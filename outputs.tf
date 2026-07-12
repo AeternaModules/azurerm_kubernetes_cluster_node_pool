@@ -1,3 +1,7 @@
+output "kubernetes_cluster_node_pools_id" {
+  description = "Map of id values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
+  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.id }
+}
 output "kubernetes_cluster_node_pools_auto_scaling_enabled" {
   description = "Map of auto_scaling_enabled values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
   value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.auto_scaling_enabled }
