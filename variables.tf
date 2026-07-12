@@ -195,11 +195,11 @@ EOT
       transparent_huge_page_enabled = optional(string)
     }))
     node_network_profile = optional(object({
-      allowed_host_ports = optional(object({
+      allowed_host_ports = optional(list(object({
         port_end   = optional(number)
         port_start = optional(number)
         protocol   = optional(string)
-      }))
+      })))
       application_security_group_ids = optional(list(string))
       node_public_ip_tags            = optional(map(string))
     }))

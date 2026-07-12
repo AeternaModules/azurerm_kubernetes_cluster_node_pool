@@ -105,7 +105,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "kubernetes_cluster_node_pools" 
     for_each = each.value.node_network_profile != null ? [each.value.node_network_profile] : []
     content {
       dynamic "allowed_host_ports" {
-        for_each = node_network_profile.value.allowed_host_ports != null ? [node_network_profile.value.allowed_host_ports] : []
+        for_each = node_network_profile.value.allowed_host_ports != null ? node_network_profile.value.allowed_host_ports : []
         content {
           port_end   = allowed_host_ports.value.port_end
           port_start = allowed_host_ports.value.port_start
