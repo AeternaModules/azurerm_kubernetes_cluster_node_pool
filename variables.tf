@@ -109,18 +109,18 @@ EOT
     kubernetes_cluster_id         = string
     name                          = string
     os_disk_size_gb               = optional(number)
-    os_disk_type                  = optional(string) # Default: "Managed"
+    os_disk_type                  = optional(string)
     os_sku                        = optional(string)
-    os_type                       = optional(string) # Default: "Linux"
+    os_type                       = optional(string)
     pod_subnet_id                 = optional(string)
-    priority                      = optional(string) # Default: "Regular"
+    priority                      = optional(string)
     proximity_placement_group_id  = optional(string)
-    scale_down_mode               = optional(string) # Default: "Delete"
+    scale_down_mode               = optional(string)
     snapshot_id                   = optional(string)
-    spot_max_price                = optional(number) # Default: -1
+    spot_max_price                = optional(number)
     tags                          = optional(map(string))
     temporary_name_for_rotation   = optional(string)
-    ultra_ssd_enabled             = optional(bool) # Default: false
+    ultra_ssd_enabled             = optional(bool)
     vm_size                       = optional(string)
     vnet_subnet_id                = optional(string)
     orchestrator_version          = optional(string)
@@ -139,7 +139,7 @@ EOT
     max_count                     = optional(number)
     max_pods                      = optional(number)
     min_count                     = optional(number)
-    mode                          = optional(string) # Default: "User"
+    mode                          = optional(string)
     node_count                    = optional(number)
     node_labels                   = optional(map(string))
     workload_runtime              = optional(string)
@@ -149,7 +149,7 @@ EOT
       container_log_max_files   = optional(number)
       container_log_max_line    = optional(number)
       container_log_max_size_mb = optional(number)
-      cpu_cfs_quota_enabled     = optional(bool) # Default: true
+      cpu_cfs_quota_enabled     = optional(bool)
       cpu_cfs_quota_period      = optional(string)
       cpu_manager_policy        = optional(string)
       image_gc_high_threshold   = optional(number)
@@ -211,7 +211,7 @@ EOT
       undrainable_node_behavior     = optional(string)
     }))
     windows_profile = optional(object({
-      outbound_nat_enabled = optional(bool) # Default: true
+      outbound_nat_enabled = optional(bool)
     }))
   }))
 }
