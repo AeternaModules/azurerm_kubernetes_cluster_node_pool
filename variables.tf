@@ -44,7 +44,6 @@ Optional:
     - kubelet_config (block):
         - allowed_unsafe_sysctls (optional)
         - container_log_max_files (optional)
-        - container_log_max_line (optional)
         - container_log_max_size_mb (optional)
         - cpu_cfs_quota_enabled (optional)
         - cpu_cfs_quota_period (optional)
@@ -87,7 +86,6 @@ Optional:
             - vm_vfs_cache_pressure (optional)
         - transparent_huge_page (optional)
         - transparent_huge_page_defrag (optional)
-        - transparent_huge_page_enabled (optional)
     - node_network_profile (block):
         - allowed_host_ports (optional, block):
             - port_end (optional)
@@ -147,7 +145,6 @@ EOT
     kubelet_config = optional(object({
       allowed_unsafe_sysctls    = optional(set(string))
       container_log_max_files   = optional(number)
-      container_log_max_line    = optional(number)
       container_log_max_size_mb = optional(number)
       cpu_cfs_quota_enabled     = optional(bool)
       cpu_cfs_quota_period      = optional(string)
@@ -190,9 +187,8 @@ EOT
         vm_swappiness                      = optional(number)
         vm_vfs_cache_pressure              = optional(number)
       }))
-      transparent_huge_page         = optional(string)
-      transparent_huge_page_defrag  = optional(string)
-      transparent_huge_page_enabled = optional(string)
+      transparent_huge_page        = optional(string)
+      transparent_huge_page_defrag = optional(string)
     }))
     node_network_profile = optional(object({
       allowed_host_ports = optional(list(object({
