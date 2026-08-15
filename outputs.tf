@@ -36,7 +36,7 @@ output "kubernetes_cluster_node_pools_host_group_id" {
 }
 output "kubernetes_cluster_node_pools_kubelet_config" {
   description = "Map of kubelet_config values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
-  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.kubelet_config if v.kubelet_config != null && length(v.kubelet_config) > 0 }
+  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => one(v.kubelet_config) if v.kubelet_config != null && length(v.kubelet_config) > 0 }
 }
 output "kubernetes_cluster_node_pools_kubelet_disk_type" {
   description = "Map of kubelet_disk_type values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
@@ -48,7 +48,7 @@ output "kubernetes_cluster_node_pools_kubernetes_cluster_id" {
 }
 output "kubernetes_cluster_node_pools_linux_os_config" {
   description = "Map of linux_os_config values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
-  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.linux_os_config if v.linux_os_config != null && length(v.linux_os_config) > 0 }
+  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => one(v.linux_os_config) if v.linux_os_config != null && length(v.linux_os_config) > 0 }
 }
 output "kubernetes_cluster_node_pools_max_count" {
   description = "Map of max_count values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
@@ -84,7 +84,7 @@ output "kubernetes_cluster_node_pools_node_labels" {
 }
 output "kubernetes_cluster_node_pools_node_network_profile" {
   description = "Map of node_network_profile values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
-  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.node_network_profile if v.node_network_profile != null && length(v.node_network_profile) > 0 }
+  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => one(v.node_network_profile) if v.node_network_profile != null && length(v.node_network_profile) > 0 }
 }
 output "kubernetes_cluster_node_pools_node_public_ip_enabled" {
   description = "Map of node_public_ip_enabled values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
@@ -156,7 +156,7 @@ output "kubernetes_cluster_node_pools_ultra_ssd_enabled" {
 }
 output "kubernetes_cluster_node_pools_upgrade_settings" {
   description = "Map of upgrade_settings values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
-  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.upgrade_settings if v.upgrade_settings != null && length(v.upgrade_settings) > 0 }
+  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => one(v.upgrade_settings) if v.upgrade_settings != null && length(v.upgrade_settings) > 0 }
 }
 output "kubernetes_cluster_node_pools_vm_size" {
   description = "Map of vm_size values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
@@ -168,7 +168,7 @@ output "kubernetes_cluster_node_pools_vnet_subnet_id" {
 }
 output "kubernetes_cluster_node_pools_windows_profile" {
   description = "Map of windows_profile values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
-  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => v.windows_profile if v.windows_profile != null && length(v.windows_profile) > 0 }
+  value       = { for k, v in azurerm_kubernetes_cluster_node_pool.kubernetes_cluster_node_pools : k => one(v.windows_profile) if v.windows_profile != null && length(v.windows_profile) > 0 }
 }
 output "kubernetes_cluster_node_pools_workload_runtime" {
   description = "Map of workload_runtime values across all kubernetes_cluster_node_pools, keyed the same as var.kubernetes_cluster_node_pools"
